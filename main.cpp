@@ -11,7 +11,7 @@ int main(){
 	Generator gen;
 
 	cout << "Schrijf een woord: ";
-	cin >> input;
+	getline(cin, input);
 	gen.setString(input);
 
 	cout << "'" << input << "' " << "in pepekestaal is: '" 
