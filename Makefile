@@ -2,7 +2,9 @@ CC=gcc
 CXX=g++
 RM=rm -f
 
-SRCS=main.cpp Generator.cpp
+CPPFLAGS=-std=c++11
+
+SRCS=main.cpp Generator.cpp ParametersContainer.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 all: pepekestaal
@@ -14,7 +16,7 @@ depend: .depend
 
 .depend: $(SRCS)
 	rm -f ./.depend
-	$(CXX) -MM $^>>./.depend
+	$(CXX) $(CPPFLAGS) -MM $^>>./.depend
 
 clean:
 	$(RM) $(OBJS)

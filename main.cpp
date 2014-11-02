@@ -2,20 +2,28 @@
 #include <string>
 
 #include "Generator.h"
+#include "ParametersContainer.h"
 
 using namespace std;
 
-int main(){
+void textMode(ParametersContainer pm, Generator gen);
 
-	string input;
+int main(int argc, char **argv){
+
 	Generator gen;
+	ParametersContainer pc(argc, argv);
 
-	cout << "Schrijf een woord: ";
-	getline(cin, input);
-	gen.setString(input);
+	if(pc.isInTextMode()){
+		textMode(pc, gen);
+	}
 
-	cout << "'" << input << "' " << "in pepekestaal is: '" 
-		<< gen.getPPConversion() << "'" <<endl;
 
 	return 0;
+}
+
+
+
+void textMode(ParametersContainer pc, Generator gen){
+	string res = gen.getPPConversion(pc.getInput());
+	cout << res << endl;
 }
