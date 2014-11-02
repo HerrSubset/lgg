@@ -3,7 +3,18 @@
 
 using namespace std;
 
-bool isKlinker(const char a){
+
+class Generator {
+	private:
+		string s;
+		bool isKlinker(const char a);
+	public:
+		void setString(string str);
+		string getPPConversion();
+		string getPPConversion(string str);
+};
+
+bool Generator::isKlinker(const char a){
 	bool res = false;
 
 	if(a == 'a'){
@@ -20,15 +31,6 @@ bool isKlinker(const char a){
 
 	return res;
 }
-
-class Generator {
-	private:
-		string s;
-	public:
-		void setString(string str);
-		string getPPConversion();
-		string getPPConversion(string str);
-};
 
 void Generator::setString(string str){
 	s = str;
