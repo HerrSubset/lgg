@@ -2,21 +2,28 @@ CC=gcc
 CXX=g++
 RM=rm -f
 
-CPPFLAGS=-std=c++11
+LDLIBS=$(shell pkg-config gtkmm-3.0 --cflags --libs)
+CPPFLAGS=-g -std=c++11
 
-SRCS=main.cpp Generator.cpp ParametersContainer.cpp
+SRCS=main.cpp Generator.cpp ParametersContainer.cpp PPWindow.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 all: pepekestaal
 
 pepekestaal: $(OBJS)
-	$(CXX) -o pepekestaal $(OBJS)
+	$(CXX) -o pepekestaal $(OBJS) $(LDLIBS)
 
-depend: .depend
+main.o: main.cpp Generator.h ParametersContainer.h PPWindow.h
+	$(CXX) -c $(CPPFLAGS) main.cpp `pkg-config gtkmm-3.0 --cflags --libs`
 
-.depend: $(SRCS)
-	rm -f ./.depend
-	$(CXX) $(CPPFLAGS) -MM $^>>./.depend
+Generator.o: Generator.cpp Generator.h
+	$(CXX) -c $(CPPFLAGS) Generator.cpp
+
+ParametersContainer.o: ParametersContainer.cpp ParametersContainer.h
+	$(CXX) -c $(CPPFLAGS) ParametersContainer.cpp
+
+PPWindow.o: PPWindow.cpp PPWindow.h Generator.h ParametersContainer.h
+	$(CXX) -c $(CPPFLAGS) PPWindow.cpp `pkg-config gtkmm-3.0 --cflags --libs`
 
 clean:
 	$(RM) $(OBJS)
@@ -24,4 +31,5 @@ clean:
 dist-clean: clean
 	$(RM) pepekestaal
 
-include: .depend
+
+
