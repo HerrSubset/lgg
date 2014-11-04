@@ -15,6 +15,11 @@ class PPWindow: public Gtk::Window{
 
 	protected:
 		Gtk::Label outputLabel;
+		Gtk::VBox v_box;
+  		Gtk::Button translateButton;
+  		Gtk::Entry entryField;
+
+  		virtual void on_button_clicked();
 };
 
 #endif

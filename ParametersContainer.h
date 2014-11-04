@@ -9,7 +9,7 @@ using namespace std;
 class ParametersContainer{
 	private:
 		bool inTextMode = true;
-	bool inGtkMode = false;
+		bool inGtkMode = false;
 		string input;
 
 	public:
