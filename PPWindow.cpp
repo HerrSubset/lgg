@@ -10,7 +10,6 @@ PPWindow::PPWindow(ParametersContainer pc, Generator g):
 	set_border_width(5);
 
 	add(v_box);
-	add(outputLabel);
 
 	v_box.pack_start(entryField);
 	v_box.pack_start(translateButton);
