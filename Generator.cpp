@@ -1,5 +1,13 @@
 #include "Generator.h"
 
+Generator::Generator(){
+
+}
+
+Generator::Generator(string xChar){
+	setXChar(xChar);
+}
+
 bool Generator::isKlinker(const char a){
 	bool res = false;
 
@@ -22,13 +30,17 @@ void Generator::setString(string str){
 	s = str;
 }
 
+void Generator::setXChar(string xc){
+	xChar = xc;
+}
+
 string Generator::getPPConversion(){
 	string res = "";
 
 	for(int i = 0; i< s.length(); i++){
 		if(isKlinker(s[i])){
 			res += s[i];
-			res += 'p';
+			res += xChar;
 		}
 		res += s[i];
 	}
@@ -38,5 +50,11 @@ string Generator::getPPConversion(){
 
 string Generator::getPPConversion(string str){
 	setString(str);
+	return getPPConversion();
+}
+
+string Generator::getPPConversion(string str, string xChar){
+	setString(str);
+	setXChar(xChar);
 	return getPPConversion();
 }

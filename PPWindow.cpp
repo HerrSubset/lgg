@@ -1,10 +1,10 @@
 #include "PPWindow.h"
 
-PPWindow::PPWindow(ParametersContainer pc, Generator gen):
-	outputLabel(gen.getPPConversion(pc.getInput())),
+PPWindow::PPWindow(ParametersContainer pc, Generator g):
+	outputLabel(g.getPPConversion(pc.getInput())),
 	translateButton("Translate")
 {
-	//outputLabel(gen.getPPConversion(pc.getInput()));
+	gen = g;
 
 	set_title("PP-Converter");
 	set_border_width(5);

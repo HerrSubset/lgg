@@ -3,7 +3,7 @@
 ParametersContainer::ParametersContainer(int argc, char **argv){
 	int c;
 	opterr = 0;
-	while ((c = getopt (argc, argv, "gti:")) != -1){
+	while ((c = getopt (argc, argv, "gti:x:")) != -1){
 	    switch (c){
 	      case 't':
 	        inTextMode = true;
@@ -15,6 +15,8 @@ ParametersContainer::ParametersContainer(int argc, char **argv){
 	      case 'i':
 	        input = optarg;
 	        break;
+	      case 'x':
+	      	xChar = optarg;
 	      }
 	}
 
@@ -30,4 +32,8 @@ bool ParametersContainer::isInGtkMode(){
 
 string ParametersContainer::getInput(){
 	return input;
+}
+
+string ParametersContainer::getXChar(){
+	return xChar;
 }

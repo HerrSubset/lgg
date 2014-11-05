@@ -13,8 +13,8 @@ int gtkMode(int argc, char *argv[], ParametersContainer pc, Generator gen);
 
 int main(int argc, char **argv){
 
-	Generator gen;
 	ParametersContainer pc(argc, argv);
+	Generator gen(pc.getXChar());
 
 	if(pc.isInTextMode()){
 		textMode(pc, gen);
