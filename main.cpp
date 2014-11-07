@@ -19,8 +19,7 @@ int main(int argc, char **argv){
 	if(pc.isInTextMode()){
 		textMode(pc, gen);
 	} if(pc.isInGtkMode()){
-		char* emptyArray[] = {"pepekestaal"};
-		gtkMode(1, emptyArray, pc, gen);
+		gtkMode(1, argv, pc, gen);
 	}
 
 
