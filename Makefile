@@ -11,7 +11,7 @@ OBJS=$(SRCS:.cpp=.o)
 
 all: lgg
 
-pepekestaal: $(OBJS)
+lgg: $(OBJS)
 	$(CXX) $(CPPFLAGS) $^ -o $@   `pkg-config gtkmm-3.0 --cflags --libs`
 
 main.o: main.cpp Generator.h ParametersContainer.h PPWindow.h
