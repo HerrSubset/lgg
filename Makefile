@@ -9,7 +9,7 @@ CPPFLAGS=-g -std=c++11 -I include
 SRCS=main.cpp Generator.cpp ParametersContainer.cpp PPWindow.cpp
 OBJS=$(SRCS:.cpp=.o)
 
-all: pepekestaal
+all: lgg
 
 pepekestaal: $(OBJS)
 	$(CXX) $(CPPFLAGS) $^ -o $@   `pkg-config gtkmm-3.0 --cflags --libs`

@@ -1,5 +1,7 @@
 #include "ParametersContainer.h"
 
+
+//constructor, extracts command line options and sets the variables accordingly
 ParametersContainer::ParametersContainer(int argc, char **argv){
 	int c;
 	opterr = 0;
@@ -22,6 +24,9 @@ ParametersContainer::ParametersContainer(int argc, char **argv){
 
 }
 
+//-----------------------------------------------------------------------------
+//Getters
+//-----------------------------------------------------------------------------
 bool ParametersContainer::isInTextMode(){
 	return inTextMode;
 }

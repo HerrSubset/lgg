@@ -1,5 +1,6 @@
 #include "PPWindow.h"
 
+//constructor
 PPWindow::PPWindow(ParametersContainer pc, Generator g):
 	outputLabel(g.getPPConversion(pc.getInput())),
 	translateButton("Translate")
@@ -15,17 +16,20 @@ PPWindow::PPWindow(ParametersContainer pc, Generator g):
 	v_box.pack_start(translateButton);
 	v_box.pack_start(outputLabel);
 
+	//link translate button to its action
 	translateButton.signal_clicked().connect(sigc::mem_fun(*this,
-              &PPWindow::on_button_clicked));
+									&PPWindow::translate_button_clicked));
 
 
 	show_all_children();
 }
 
+//destructor
 PPWindow::~PPWindow(){
 
 }
 
-void PPWindow::on_button_clicked(){
+//action of translate button
+void PPWindow::translate_button_clicked(){
 	outputLabel.set_text(gen.getPPConversion(entryField.get_text()));
 }
