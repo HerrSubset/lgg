@@ -23,7 +23,7 @@ class PPWindow: public Gtk::Window{
   		Gtk::Button translateButton;
   		Gtk::Entry entryField;
 
-  		virtual void on_button_clicked();
+  		virtual void translate_button_clicked();
 };
 
 #endif
