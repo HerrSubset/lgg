@@ -31,6 +31,3 @@ clean:
 
 dist-clean: clean
 	$(RM) pepekestaal
-
-
-

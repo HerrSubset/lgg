@@ -1,11 +1,11 @@
 #include "PPWindow.h"
 
 //constructor
-PPWindow::PPWindow(ParametersContainer pc, Generator g):
+PPWindow::PPWindow(ParametersContainer& pc, Generator g):
 	outputLabel(g.getPPConversion(pc.getInput())),
 	translateButton("Translate")
 {
-	gen = g;
+	gen = &g;
 
 	set_title("PP-Converter");
 	set_border_width(5);
@@ -31,5 +31,5 @@ PPWindow::~PPWindow(){
 
 //action of translate button
 void PPWindow::translate_button_clicked(){
-	outputLabel.set_text(gen.getPPConversion(entryField.get_text()));
+	outputLabel.set_text(gen->getPPConversion(entryField.get_text()));
 }

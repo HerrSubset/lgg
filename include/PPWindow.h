@@ -12,9 +12,9 @@
 //class representing the graphical window
 class PPWindow: public Gtk::Window{
 	private:
-		Generator gen;
+		Generator* gen;
 	public:
-		PPWindow(ParametersContainer pc, Generator gen);
+		PPWindow(ParametersContainer& pc, Generator gen);
 		virtual ~PPWindow();
 
 	protected:

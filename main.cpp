@@ -44,7 +44,8 @@ void textMode(ParametersContainer pc, Generator gen){
 //starts the program in graphical (gtk) mode
 int gtkMode(int argc, char *argv[], ParametersContainer pc, Generator gen){
 	//needed for every gtk application
-	Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "net.herrsubset.ppconverter");
+	Glib::RefPtr<Gtk::Application> app =
+		Gtk::Application::create(argc, argv, "net.herrsubset.ppconverter");
 
 	PPWindow ppw(pc, gen);
 

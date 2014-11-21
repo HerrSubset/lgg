@@ -5,10 +5,10 @@ Converts text to a [language game](https://en.wikipedia.org/wiki/Language_game),
 
 ##Building the project
 To build this project you will need [make](https://www.gnu.org/software/make/),
- an installation of [gtkmm 3.0](https://developer.gnome.org/gtkmm-tutorial/stable/chapter-installation.html.en) 
+ an installation of [gtkmm 3.0](https://developer.gnome.org/gtkmm-tutorial/stable/chapter-installation.html.en)
  and the [gcc compiler](https://gcc.gnu.org/) (more specifically g++).
-This means that building the project should be rather straightforward for linux 
-and OSX users, simply fork/clone the project, navigate to the root of the 
+This means that building the project should be rather straightforward for linux
+and OSX users, simply fork/clone the project, navigate to the root of the
 project and type `make`.
 
 ##Supported language games
