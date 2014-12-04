@@ -4,7 +4,7 @@ RM=rm -f
 
 vpath %.cpp src/domain src/ui
 vpath %.h include/
-CPPFLAGS=-g -std=c++11 -I include
+CPPFLAGS=-g -std=c++0x -I include
 
 SRCS=main.cpp Generator.cpp ParametersContainer.cpp PPWindow.cpp
 OBJS=$(SRCS:.cpp=.o)

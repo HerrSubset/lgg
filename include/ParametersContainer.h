@@ -11,10 +11,10 @@ using namespace std;
 class ParametersContainer{
 	private:
 		//variables
-		bool inTextMode = true;
-		bool inGtkMode = false;
+		bool inTextMode;
+		bool inGtkMode;
 		string input;
-		string xChar = "p";
+		string xChar;
 
 	public:
 		//constructor
