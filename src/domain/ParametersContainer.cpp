@@ -3,6 +3,11 @@
 
 //constructor, extracts command line options and sets the variables accordingly
 ParametersContainer::ParametersContainer(int argc, char **argv){
+	inTextMode = true;
+	inGtkMode = false;
+	xChar = "p";
+
+	
 	int c;
 	opterr = 0;
 	while ((c = getopt (argc, argv, "gti:x:")) != -1){
